@@ -78,6 +78,11 @@ cmf_core:
         phpcr:
             enabled: true
 
+cmf_routing:
+    dynamic:
+        templates_by_class:
+            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

@@ -1,0 +1,4 @@
+dbu_conference:
+    resource: "@DbuConferenceBundle/Resources/config/routing.yml"
+    prefix:   /
+
