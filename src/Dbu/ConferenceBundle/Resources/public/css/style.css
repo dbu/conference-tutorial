@@ -1,0 +1,19 @@
+body {
+    color: #666666;
+}
+
+div.content-wrapper {
+    top: 47px;
+}
+
+.ribbon {
+    background: none repeat scroll 0 0 #EEEEEE;
+    padding: 1.5em;
+}
+
+.ribbon h2 {
+    display: inline;
+    padding-right: 6px;
+    color: #888888;
+    font-weight: normal;
+}
