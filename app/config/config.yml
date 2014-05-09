@@ -81,6 +81,7 @@ cmf_core:
 cmf_routing:
     dynamic:
         templates_by_class:
+            Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
 
 # Swiftmailer Configuration
