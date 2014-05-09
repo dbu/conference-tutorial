@@ -43,4 +43,30 @@ class Presentation extends Page
     {
         return $this->start;
     }
+
+    /**
+     * @param Speaker[] $speakers
+     */
+    public function setSpeakers($speakers)
+    {
+        $this->speakers = $speakers;
+    }
+
+    /**
+     * @return Speaker[]
+     */
+    public function getSpeakers()
+    {
+        return $this->speakers;
+    }
+
+    public function addSpeaker(Speaker $speaker)
+    {
+        $this->speakers->add($speaker);
+    }
+
+    public function removeSpeaker(Speaker $speaker)
+    {
+        $this->speakers->remove($speaker);
+    }
 }
