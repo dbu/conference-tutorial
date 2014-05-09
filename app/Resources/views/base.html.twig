@@ -1,13 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>{% block title %}{{ 'site.title'|trans }}{% endblock %}</title>
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/pure-min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/main-grid.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/marketing.css') }}" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div id="body">
+            {% block header %}
+                <div class="header">
+                    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+                        <a class="pure-menu-heading" href="">{{ 'site.slogan'|trans }}</a>
+
+                        <em>TODO build real menu:</em>
+                        <ul>
+                            <li class="pure-menu-selected"><a href="#">Home</a></li>
+                            <li><a href="#">Tour</a></li>
+                            <li><a href="#">API</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            {% endblock %}
+
+            <div class="content-wrapper">
+                {% block content %}
+                    <div class="content">
+                    </div>
+                {% endblock %}
+
+                {% block content_footer %}
+                    <div class="ribbon l-box is-center">
+                        <h2>{{ 'site.action_attend'|trans }}</h2>
+                        <a href="#" class="pure-button primary-button" onclick="alert('TODO: This will show the subscription form.')">Sign up</a>
+                    </div>
+                {% endblock %}
+
+                {% block footer %}
+                    <div class="footer l-box is-center">
+                        {{ 'site.description'|trans }}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
     </body>
 </html>
