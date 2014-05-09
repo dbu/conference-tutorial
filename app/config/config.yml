@@ -51,6 +51,33 @@ doctrine:
         password: "%database_password%"
         charset:  UTF8
 
+doctrine_cache:
+    providers:
+        phpcr_meta:
+            type: file_system
+        phpcr_nodes:
+            type: file_system
+
+doctrine_phpcr:
+    # configure the PHPCR session
+    session:
+        backend: %phpcr_backend%
+        workspace: %phpcr_workspace%
+        username: %phpcr_user%
+        password: %phpcr_pass%
+    # enable the ODM layer
+    odm:
+        auto_mapping: true
+        auto_generate_proxy_classes: %kernel.debug%
+
+knp_menu:
+    twig: true
+
+cmf_core:
+    persistence:
+        phpcr:
+            enabled: true
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

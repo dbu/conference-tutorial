@@ -7,6 +7,16 @@ parameters:
     database_user:     ~
     database_password: ~
 
+    phpcr_backend:
+        type: doctrinedbal
+        connection: default
+        caches:
+            meta: doctrine_cache.providers.phpcr_meta
+            nodes: doctrine_cache.providers.phpcr_nodes
+    phpcr_workspace: default
+    phpcr_user: admin
+    phpcr_pass: admin
+
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~
