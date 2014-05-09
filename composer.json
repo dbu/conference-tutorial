@@ -1,15 +1,21 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "dbu/conference-tutorial",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Symfony CMF tutorial to build a cms web application",
+    "authors": [
+        {
+            "name": "David Buchmann",
+            "homepage": "https://davidbu.ch"
+        }
+    ],
     "autoload": {
         "psr-0": { "": "src/" }
     },
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
-        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/dbal": "2.4.*",
         "doctrine/doctrine-bundle": "1.2.*",
         "twig/extensions": "1.0.*",
         "symfony/assetic-bundle": "2.3.*",
@@ -45,9 +51,6 @@
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.3-dev"
         }
     }
 }
