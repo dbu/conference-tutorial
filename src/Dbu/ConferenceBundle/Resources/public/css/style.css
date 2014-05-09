@@ -17,3 +17,8 @@ div.content-wrapper {
     color: #888888;
     font-weight: normal;
 }
+
+.presentation-info {
+    font-weight: bold;
+    margin-bottom: 1em;
+}
