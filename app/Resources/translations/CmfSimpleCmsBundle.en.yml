@@ -1,0 +1,21 @@
+breadcrumb:
+    link_presentation_list: Presentations
+    link_room_list: Rooms
+    link_speaker_list: Speakers
+
+label_full_name: Full Name
+label_room_title: Room Name
+
+form:
+    label_speakers: Speakers
+    label_description: Description
+    label_presentation_room: Room
+    label_start: Start Time
+
+list:
+    label_speakers: Speakers
+    label_parent: Room
+    label_description: Description
+    label_fullname: Speaker Name
+    label_presentations: Presentations
+    label_start: Start Time

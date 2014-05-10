@@ -1,0 +1,45 @@
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+        sonata_admin_doctrine_phpcr.tree_block:
+            contexts: [admin]
+
+sonata_admin:
+    dashboard:
+        blocks:
+            - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
+            - { position: right, type: sonata.admin.block.admin_list }
+        groups:
+            content:
+                label: Content
+                items:
+                    - cmf_simple_cms.persistence.phpcr.admin.page
+                    - dbu_conference.admin.room
+                    - dbu_conference.admin.speaker
+                    - dbu_conference.admin.presentation
+            routing:
+                label: Additional URLs
+                items:
+                    - cmf_routing.route_admin
+                    - cmf_routing.redirect_route_admin
+            menu:
+                label: Additional Menus
+                items:
+                    - cmf_menu.menu_admin
+                    - cmf_menu.node_admin
+
+sonata_doctrine_phpcr_admin:
+    document_tree:
+        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
+             valid_children:
+                 - all
+        Doctrine\ODM\PHPCR\Document\Generic:
+            valid_children:
+                - all
+        Dbu\ConferenceBundle\Document\Room:
+             valid_children:
+                 - Dbu\ConferenceBundle\Document\Presentation
+        Dbu\ConferenceBundle\Document\Presentation: ~
+        Dbu\ConferenceBundle\Document\Speaker: ~

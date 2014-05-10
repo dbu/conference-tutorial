@@ -37,6 +37,15 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
 
+            // sonata admin
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+
             // other helper bundles
             new Liip\ImagineBundle\LiipImagineBundle(),
 
