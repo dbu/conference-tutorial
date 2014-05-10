@@ -1,4 +1,8 @@
 {% for speaker in speakers %}
+    {% if cmf_is_published(speaker) %}
     <a href="{{ speaker_path(speaker) }}">{{ speaker.fullname }}</a>
     {% if not loop.last %},{% endif %}
+    {% else %}
+        <em>{{ 'speaker.unpublished'|trans }}</em>
+    {% endif %}
 {% endfor %}

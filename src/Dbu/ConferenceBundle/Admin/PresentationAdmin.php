@@ -17,6 +17,7 @@ class PresentationAdmin extends PageAdmin
             ->add('speakers')
             ->add('start', 'datetime', array('format' => 'd.m.Y h:m'))
             ->add('parent')
+            ->add('publishable', null, array('label' => 'Publishable'))
         ;
     }
 

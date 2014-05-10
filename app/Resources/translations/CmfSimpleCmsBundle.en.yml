@@ -5,6 +5,7 @@ breadcrumb:
 
 label_full_name: Full Name
 label_room_title: Room Name
+label_confirmed: Speaker Confirmed
 
 form:
     label_speakers: Speakers
