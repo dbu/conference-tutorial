@@ -16,3 +16,13 @@ services:
             - %dbu_conference.speakers_path%
         tags:
             - { name: twig.extension }
+
+    dbu_conference.menu.hardcoded_url_voter:
+        class: Dbu\ConferenceBundle\Voter\HardcodedUrlVoter
+        arguments:
+            - Dbu\ConferenceBundle\Document\Presentation
+            - /schedule
+        calls:
+            - [setRequest, ["@?request="]]
+        tags:
+            - { name: "cmf_menu.voter" }
