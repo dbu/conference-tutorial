@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+                <h1>{{ "site.subscribe"|trans }}</h1>
+                {{ form(form, {'attr' : {'class' : 'pure-form pure-form-stacked subscription-form'} }) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content_footer %}
+{% endblock %}
