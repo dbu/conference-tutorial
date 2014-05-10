@@ -31,3 +31,18 @@ div.content-wrapper {
     text-decoration: none;
     font-weight: bold;
 }
+
+.subscription-form {
+    max-width: 400px;
+}
+
+.flash-notice {
+    margin: 4em 5em 0 5em;
+    padding: 1em;
+    clear: both;
+    border: solid #8f8;
+    background: #dfd;
+    color: #333;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}

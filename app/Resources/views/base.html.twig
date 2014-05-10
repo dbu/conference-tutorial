@@ -27,6 +27,12 @@
             {% endblock %}
 
             <div class="content-wrapper">
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+                    <div class="content flash-notice">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+
                 {% block content %}
                     <div class="content">
                     </div>
@@ -35,7 +41,7 @@
                 {% block content_footer %}
                     <div class="ribbon l-box is-center">
                         <h2>{{ 'site.action_attend'|trans }}</h2>
-                        <a href="#" class="pure-button primary-button" onclick="alert('TODO: This will show the subscription form.')">Sign up</a>
+                        <a href="{{ path('dbu_conference_subscribe') }}" class="pure-button primary-button">Sign up</a>
                     </div>
                 {% endblock %}
 

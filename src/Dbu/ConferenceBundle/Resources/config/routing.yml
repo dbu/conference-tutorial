@@ -1,0 +1,3 @@
+dbu_conference_subscribe:
+    path: /subscribe
+    defaults: { _controller: DbuConferenceBundle:Subscribe:subscribe }
