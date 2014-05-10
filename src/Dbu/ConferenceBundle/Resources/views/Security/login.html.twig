@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+
+{% block content %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+
+                {% if error %}
+                    <div class="error">{{ error.message }}</div>
+                {% endif %}
+
+                <form action="{{ path('login_check') }}" method="post" class="pure-form pure-form-aligned login-form">
+                    <fieldset>
+                        <div class="pure-control-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Username"/>
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="_password" placeholder="Password"/>
+                        </div>
+                        <div class="pure-controls">
+                            <button type="submit" class="pure-button pure-button-primary">Login</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

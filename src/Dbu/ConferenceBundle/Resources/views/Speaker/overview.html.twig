@@ -3,9 +3,11 @@
 {% block content %}
     <div class="pure-g-r content-ribbon">
         <div class="pure-u-1">
-            <div class="l-box">
-                <h1>{{ cmfMainContent.title }}</h1>
+            {% createphp cmfMainContent as="rdf" noautotag %}
+            <div class="l-box" {{ createphp_attributes(rdf) }}>
+                <h1 {{ createphp_attributes( rdf.title ) }}>{{ cmfMainContent.title }}</h1>
             </div>
+            {% endcreatephp %}
         </div>
     </div>
 
@@ -13,11 +15,10 @@
         {% for speaker in cmfMainContent.children %}
             <a name="{{ speaker.name }}"></a>
             <div class="pure-u-1">
-                <div class="l-box">
-                    <h2>{{ speaker.fullname }}</h2>
-                    <div>
-                        {{ speaker.body }}
-                    </div>
+                {% createphp speaker as="rdf" noautotag %}
+                <div class="l-box" {{ createphp_attributes(rdf) }}>
+                    <h2 {{ createphp_attributes( rdf.fullname ) }}>{{ speaker.fullname }}</h2>
+                    <div id="main-content" {{ createphp_attributes(rdf.body) }}>{{ speaker.body|raw }}</div>
                     <h3>{{ 'speaker.presentations'|trans }}</h3>
                     <ul>
                         {% for presentation in speaker.presentations %}
@@ -25,6 +26,7 @@
                         {% endfor %}
                     </ul>
                 </div>
+                {% endcreatephp %}
             </div>
         {% endfor %}
     </div>
