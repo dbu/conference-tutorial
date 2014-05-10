@@ -87,6 +87,17 @@ cmf_routing:
             Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
 
+sonata_seo:
+    page:
+        title: The Conference
+        metas:
+            name:
+                description: A demo site for the Symfony CMF
+                keywords: Symfony, tutorial, cmf, sonata, phpcr, phpcr-odm, doctrine
+
+cmf_seo:
+    title: site.title
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

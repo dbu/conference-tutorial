@@ -31,6 +31,8 @@ class SubscribeController extends Controller
             return $this->redirect($this->generateUrl('/cms/simple'));
         }
 
+        $this->get('sonata.seo.page')->setTitle($this->get('translator')->trans('site.subscribe'));
+
         return $this->render('DbuConferenceBundle:Subscribe:form.html.twig', array(
             'form' => $form->createView(),
         ));

@@ -39,6 +39,7 @@
 
         "sonata-project/doctrine-phpcr-admin-bundle": "1.1.*",
 
+        "burgov/key-value-form-bundle": "1.0.*",
         "liip/imagine-bundle": "~0.21"
     },
     "scripts": {

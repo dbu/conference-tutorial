@@ -41,6 +41,9 @@ sonata_admin:
                 - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface
             excludes:
                 - dbu_conference.admin.room
+        cmf_seo.admin_extension:
+            implements:
+                - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
 
 sonata_doctrine_phpcr_admin:
     document_tree:
