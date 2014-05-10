@@ -13,6 +13,7 @@
 
     <div class="pure-g-r content-ribbon">
         {% for speaker in cmfMainContent.children %}
+            {% if cmf_is_published(speaker) %}
             <a name="{{ speaker.name }}"></a>
             <div class="pure-u-1">
                 {% createphp speaker as="rdf" noautotag %}
@@ -28,6 +29,7 @@
                 </div>
                 {% endcreatephp %}
             </div>
+            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

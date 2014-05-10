@@ -14,6 +14,7 @@ class SpeakerAdmin extends PageAdmin
         $listMapper
             ->addIdentifier('fullname')
             ->add('presentations')
+            ->add('publishable', null, array('label' => 'label_confirmed'))
         ;
     }
 
@@ -27,6 +28,10 @@ class SpeakerAdmin extends PageAdmin
 
                 ->remove('parent')
                 ->remove('label')
+            ->end()
+
+            ->with('form.group_publish_workflow')
+                ->add('publishable', null, array('label' => 'label_confirmed', 'required' => false))
             ->end()
         ;
     }
