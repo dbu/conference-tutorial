@@ -1,0 +1,9 @@
+<type
+    xmlns:schema="http://schema.org/"
+    xmlns:type="http://davidbu.ch/types/"
+    typeof="type:schedule"
+>
+    <children>
+        <property property="schema:headline" identifier="title"/>
+    </children>
+</type>

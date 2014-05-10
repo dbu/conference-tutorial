@@ -1,3 +1,11 @@
 dbu_conference_subscribe:
     path: /subscribe
     defaults: { _controller: DbuConferenceBundle:Subscribe:subscribe }
+
+login:
+    path:   /login
+    defaults:  { _controller: DbuConferenceBundle:Security:login }
+login_check:
+    path:   /login_check
+logout:
+    path:   /logout

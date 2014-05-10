@@ -6,6 +6,14 @@ div.content-wrapper {
     top: 47px;
 }
 
+body.admin .pure-menu-fixed {
+    padding-top: 62px;
+}
+
+body.admin div.content-wrapper {
+    margin-top: 62px;
+}
+
 .ribbon {
     background: none repeat scroll 0 0 #EEEEEE;
     padding: 1.5em;
@@ -45,4 +53,31 @@ div.content-wrapper {
     color: #333;
     -moz-border-radius: 15px;
     border-radius: 15px;
+}
+
+.user-control {
+    float: right;
+    font-size: 0.7em;
+    padding-top: 0.3em;
+}
+
+.pure-form.login-form input[type] {
+    width: auto;
+    margin-bottom: 0;
+}
+.pure-form label {
+    font-weight: normal;
+}
+
+.error {
+    padding: 0.5em 1.5em;
+    margin: 0 0 1.5em 0;
+    border: 0 none rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    transition: box-shadow 0.1s linear 0s;
+    background-color: red;
+}
+
+.create-ui-toggle {
+    -moz-box-sizing: content-box;
 }

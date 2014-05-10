@@ -1,0 +1,10 @@
+<type
+    xmlns:schema="http://schema.org/"
+    xmlns:type="http://davidbu.ch/types/"
+    typeof="type:speaker"
+>
+    <children>
+        <property property="schema:headline" identifier="fullname"/>
+        <property property="schema:text" identifier="body" />
+    </children>
+</type>

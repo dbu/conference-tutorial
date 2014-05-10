@@ -11,15 +11,27 @@
             <link rel="stylesheet" href="{{ asset('css/main-grid.css') }}" />
             <link rel="stylesheet" href="{{ asset('css/marketing.css') }}" />
             <link rel="stylesheet" href="{{ asset('bundles/dbuconference/css/style.css') }}" />
+            {# Create.js is only available for admins by default #}
+            {% if is_granted('ROLE_ADMIN') %}
+                {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+            {% endif %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+    <body {% if is_granted('ROLE_ADMIN') %}class="admin"{% endif %}>
         <div id="body">
             {% block header %}
                 <div class="header">
                     <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
                         <a class="pure-menu-heading" href="{{ path('/cms/simple') }}">{{ 'site.slogan'|trans }}</a>
+
+                        <div class="user-control">
+                            {% if is_granted('ROLE_USER') %}
+                                <a href="{{ path('logout') }}">Logout</a>
+                            {% else %}
+                                <a href="{{ path('login') }}">Login</a>
+                            {% endif %}
+                        </div>
 
                         {{ knp_menu_render('simple', {'currentClass': 'pure-menu-selected', 'depth': 1}) }}
                     </div>
@@ -52,5 +64,7 @@
                 {% endblock %}
             </div>
         </div>
+
+        {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction")) %}
     </body>
 </html>
