@@ -25,7 +25,12 @@ class SpeakerAdmin extends PageAdmin
         $formMapper
             ->with('form.group_general')
                 ->add('title', null, array('label' => 'label_full_name'))
-
+                ->add('portrait',
+                    'cmf_media_image',
+                    array(
+                        'required' => false,
+                    )
+                )
                 ->remove('parent')
                 ->remove('label')
             ->end()
