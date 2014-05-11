@@ -5,6 +5,8 @@ namespace Dbu\ConferenceBundle\Document;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
+use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
+use Symfony\Cmf\Bundle\SeoBundle\Model\SeoMetadataInterface;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 
@@ -13,7 +15,7 @@ use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
  *
  * @PHPCRODM\Document(referenceable=true)
  */
-class Presentation extends Page
+class Presentation extends Page implements SeoAwareInterface
 {
     /**
      * @var \DateTime
@@ -22,6 +24,12 @@ class Presentation extends Page
      * Start time of the presentation
      */
     private $start;
+
+    /**
+     * @var SeoMetadataInterface
+     * @PHPCRODM\Child
+     */
+    private $seoMetadata;
 
     /**
      * @var Speaker[]|Collection
@@ -76,6 +84,22 @@ class Presentation extends Page
     public function removeSpeaker(Speaker $speaker)
     {
         $this->speakers->removeElement($speaker);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSeoMetadata()
+    {
+        return $this->seoMetadata;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSeoMetadata($metadata)
+    {
+        $this->seoMetadata = $metadata;
     }
 
     public function __toString()

@@ -4,6 +4,7 @@ namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\DocumentManager;
@@ -48,6 +49,14 @@ class LoadPresentationData extends ContainerAware implements FixtureInterface, O
         $presentation->setBody($data['body']);
         $presentation->setStart($data['start']);
 
+        if (isset($data['seo'])) {
+            $seoMetadata = new SeoMetadata();
+            $seoMetadata->setTitle($data['seo']['title']);
+            $seoMetadata->setMetaDescription($data['seo']['description']);
+            $seoMetadata->setMetaKeywords($data['seo']['keywords']);
+            $presentation->setSeoMetadata($seoMetadata);
+        }
+
         $manager->persist($presentation);
 
         return $presentation;
@@ -61,6 +70,11 @@ class LoadPresentationData extends ContainerAware implements FixtureInterface, O
                 'title' => 'Diving deep into Twig ',
                 'body' => 'Developers are able to modify the behavior and possibilities of Twig (the PHP templating engine by Fabien Potencier) in many ways, ranging from very easy to very tough. It all starts with simply registering your extension, but from then on you can choose to create your own filters, functions and tests. I will quickly review your options, and show some best practices. After discussing these basic modifications, we\'ll take a look at creating token parsers and thinking up custom node types, which will enable you to define your own tags (the things between {% %}). I will demonstrate the inner workings of Twig: from the loader, to the lexer, to the parser, to your own token parser, to creating nodes, filtering nodes using a node visitor and finally to the compiler, which transforms all nodes to plain old PHP.',
                 'start' => new \DateTime('2013-12-12 10:10:00'),
+                'seo' => array(
+                    'title' => 'Twig Tutorial',
+                    'description' => 'Twig templating engine overview at The Conference',
+                    'keywords' => 'Twig, Loader, Lexer, Parser, Extension',
+                ),
             ),
             array(
                 'slug' => 'build-awesome-rest-apis-with-symfony2',

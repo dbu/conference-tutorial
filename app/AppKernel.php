@@ -48,6 +48,7 @@ class AppKernel extends Kernel
 
             // other helper bundles
             new Liip\ImagineBundle\LiipImagineBundle(),
+            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
 
             // conference website application bundle
             new Dbu\ConferenceBundle\DbuConferenceBundle(),
