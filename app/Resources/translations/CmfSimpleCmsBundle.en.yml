@@ -12,6 +12,7 @@ form:
     label_description: Description
     label_presentation_room: Room
     label_start: Start Time
+    label_portrait: Portrait
 
 list:
     label_speakers: Speakers

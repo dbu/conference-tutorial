@@ -40,6 +40,19 @@ body.admin div.content-wrapper {
     font-weight: bold;
 }
 
+.speaker .portrait {
+    margin: 1.4em 0.7em 0 0;
+    float: left;
+}
+
+.speaker h3 {
+    clear: both;
+}
+
+.mini-portrait {
+    margin: 0 0.4em 0 0;
+}
+
 .subscription-form {
     max-width: 400px;
 }

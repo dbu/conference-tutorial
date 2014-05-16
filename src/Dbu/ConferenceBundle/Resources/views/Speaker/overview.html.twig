@@ -17,7 +17,12 @@
             <a name="{{ speaker.name }}"></a>
             <div class="pure-u-1">
                 {% createphp speaker as="rdf" noautotag %}
-                <div class="l-box" {{ createphp_attributes(rdf) }}>
+                <div class="l-box speaker" {{ createphp_attributes(rdf) }}>
+                    {% if speaker.portrait %}
+                        <img class="portrait"
+                             src="{{ speaker.portrait.id | imagine_filter('portrait_large') }}"
+                             alt="{{ speaker.fullname }}"/>
+                    {% endif %}
                     <h2 {{ createphp_attributes( rdf.fullname ) }}>{{ speaker.fullname }}</h2>
                     <div id="main-content" {{ createphp_attributes(rdf.body) }}>{{ speaker.body|raw }}</div>
                     <h3>{{ 'speaker.presentations'|trans }}</h3>
