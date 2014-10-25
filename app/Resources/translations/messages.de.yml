@@ -1,0 +1,15 @@
+site:
+    title: "%content_title% - Die Konferenz"
+    slogan: Konferenz-Webseite
+    description:  Diese Webseite demonstriert, wie man mit dem Symfony2 CMF eine Webseite baut.
+    action_attend: Möchtest Du an der Konferenz teilnehmen?
+    subscribe: Anmelden um an der Konferenz teilzunehmen
+    action_attend_signup: Anmelden
+
+presentation:
+    location: Raum
+    unpublished: Zu bestätigen
+
+speaker:
+    presentations: Präsentationen
+    unpublished: Zu bestätigen

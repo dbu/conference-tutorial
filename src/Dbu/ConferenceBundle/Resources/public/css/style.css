@@ -68,6 +68,14 @@ body.admin div.content-wrapper {
     border-radius: 15px;
 }
 
+ul.locale-chooser {
+    padding-left: 20px;
+}
+.pure-menu .locale-chooser li a {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .pure-menu ul.user-control {
     font-size: 0.7em;
     padding-top: 0.3em;

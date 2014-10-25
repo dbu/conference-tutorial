@@ -21,8 +21,10 @@ security:
         site:
             pattern:    ^/
             anonymous: ~
-            form_login: ~
-            logout: ~
+            form_login:
+                login_path: login
+            logout:
+                path: logout
 
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/((..)/)?admin, roles: ROLE_ADMIN }

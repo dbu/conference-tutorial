@@ -73,11 +73,18 @@ doctrine_phpcr:
     odm:
         auto_mapping: true
         auto_generate_proxy_classes: %kernel.debug%
+        locales:
+            en:
+                - de
+            de:
+                - en
 
 knp_menu:
     twig: true
 
 cmf_core:
+    multilang:
+        locales: %locales%
     persistence:
         phpcr:
             enabled: true
@@ -126,6 +133,16 @@ sonata_seo:
 
 cmf_seo:
     title: site.title
+
+lunetics_locale:
+    guessing_order:
+        - router
+        - cookie
+        - browser
+    switcher:
+        show_current_locale: true
+    allowed_locales: %locales%
+    strict_match: true
 
 # Swiftmailer Configuration
 swiftmailer:

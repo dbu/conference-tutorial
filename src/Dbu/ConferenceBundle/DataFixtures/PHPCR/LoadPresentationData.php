@@ -45,6 +45,7 @@ class LoadPresentationData extends ContainerAware implements FixtureInterface, O
     {
         $presentation = new Presentation();
         $presentation->setPosition($parent, $data['slug']);
+        $presentation->setOption('add_locale_pattern', true);
         $presentation->setTitle($data['title']);
         $presentation->setBody($data['body']);
         $presentation->setStart($data['start']);

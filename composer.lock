@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a287a26944bb5d0eaebacfb9cd484845",
+    "hash": "02082c8965d5555f0d9100de98f8416c",
     "packages": [
         {
             "name": "burgov/key-value-form-bundle",
@@ -1739,6 +1739,74 @@
                 "imagine"
             ],
             "time": "2014-03-14 17:57:09"
+        },
+        {
+            "name": "lunetics/locale-bundle",
+            "version": "v2.3.1",
+            "target-dir": "Lunetics/LocaleBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lunetics/LocaleBundle.git",
+                "reference": "4297886c8a4837334c527c6ab7bdbe07fc62ce87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lunetics/LocaleBundle/zipball/4297886c8a4837334c527c6ab7bdbe07fc62ce87",
+                "reference": "4297886c8a4837334c527c6ab7bdbe07fc62ce87",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "psr/log": "~1.0",
+                "symfony/framework-bundle": ">=2.2.2",
+                "symfony/locale": "~2.2",
+                "symfony/validator": "~2.2",
+                "symfony/yaml": "~2.2"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "symfony/form": "~2.2",
+                "twig/twig": "1.*"
+            },
+            "suggest": {
+                "ext-intl": "Needed for displaying the countryname in the locale language"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Lunetics\\LocaleBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lunetics",
+                    "homepage": "http://www.lunetics.com"
+                },
+                {
+                    "name": "Christophe Willesmen",
+                    "homepage": "http://christophewillemsen.com"
+                }
+            ],
+            "description": "A Bundle for switching Languages",
+            "keywords": [
+                "browser",
+                "bundle",
+                "cookie",
+                "language",
+                "locale",
+                "multilanguage",
+                "router"
+            ],
+            "time": "2014-09-10 07:48:45"
         },
         {
             "name": "midgard/createphp",
