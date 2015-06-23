@@ -81,6 +81,10 @@ ul.locale-chooser {
     padding-top: 0.3em;
 }
 
+div.footer-menu {
+    padding: 0;
+}
+
 .pure-form.login-form input[type] {
     width: auto;
     margin-bottom: 0;

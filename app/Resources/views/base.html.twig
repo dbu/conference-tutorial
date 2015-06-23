@@ -65,6 +65,9 @@
                     <div class="footer l-box is-center">
                         {{ 'site.description'|trans }}
                     </div>
+                    <div class="footer-menu pure-menu pure-menu-open pure-menu-horizontal">
+                        {{ knp_menu_render('service', {'currentClass': 'pure-menu-selected', 'depth': 1}) }}
+                    </div>
                 {% endblock %}
             </div>
         </div>

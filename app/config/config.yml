@@ -96,6 +96,7 @@ cmf_routing:
         templates_by_class:
             Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
+            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: DbuConferenceBundle:Page:index.html.twig
 
 cmf_media:
     imagine_filters:
