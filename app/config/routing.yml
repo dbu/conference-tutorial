@@ -13,11 +13,24 @@ _imagine:
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
+    prefix: /{_locale}/admin
 sonata_admin:
     resource: .
     type: sonata_admin
-    prefix: /admin
+    prefix: /{_locale}/admin
+# redirect routes for the non-locale routes
+admin_without_locale:
+    pattern: /admin
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true
+admin_dashboard_without_locale:
+    pattern: /admin/dashboard
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 cmf_tree:

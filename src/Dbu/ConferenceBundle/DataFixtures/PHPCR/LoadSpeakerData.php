@@ -49,6 +49,7 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
     {
         $speaker = new Speaker();
         $speaker->setPosition($parent, $data['slug']);
+        $speaker->setOption('add_locale_pattern', true);
         $speaker->setFullname($data['fullname']);
         $speaker->setBody($data['body']);
         if (isset($data['portrait'])) {

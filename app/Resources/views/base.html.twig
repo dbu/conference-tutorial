@@ -35,6 +35,8 @@
                             {% endif %}
                         </ul>
 
+                        {{ locale_switcher(null, null, '::switcher_links.html.twig') }}
+
                         {{ knp_menu_render('simple', {'currentClass': 'pure-menu-selected', 'depth': 1}) }}
                     </div>
                 </div>
@@ -55,7 +57,7 @@
                 {% block content_footer %}
                     <div class="ribbon l-box is-center">
                         <h2>{{ 'site.action_attend'|trans }}</h2>
-                        <a href="{{ path('dbu_conference_subscribe') }}" class="pure-button primary-button">Sign up</a>
+                        <a href="{{ path('dbu_conference_subscribe') }}" class="pure-button primary-button">{{ 'site.action_attend_signup'|trans }}</a>
                     </div>
                 {% endblock %}
 

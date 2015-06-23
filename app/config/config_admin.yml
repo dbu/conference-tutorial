@@ -7,6 +7,8 @@ sonata_block:
             contexts: [admin]
 
 sonata_admin:
+    templates:
+        user_block: DbuConferenceBundle:Admin:topnav.html.twig
     dashboard:
         blocks:
             - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
@@ -44,6 +46,9 @@ sonata_admin:
         cmf_seo.admin_extension:
             implements:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
+        cmf_core.admin_extension.translatable:
+            implements:
+                - Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface
 
 sonata_doctrine_phpcr_admin:
     document_tree:
